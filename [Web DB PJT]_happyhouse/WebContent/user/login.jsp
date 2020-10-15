@@ -6,40 +6,17 @@
 	<c:set var="saveid" value="${cookie.ssafy_id.value}"/>
 	<c:set var="idck" value=" checked=\"checked\""/>
 </c:if>
-<script type="text/javascript">
-function login() {
-	if(document.getElementById("userid").value == "") {
-		alert("아이디 입력하십시오.");
-		return;
-	} else if(document.getElementById("userpwd").value == "") {
-		alert("비밀번호 입력하십시오.");
-		return;
-	} else {
-		document.getElementById("loginform").action = "${root}/member?act=login";
-		document.getElementById("loginform").submit();
-	}
-}
-	  
-function moveJoin() {
-	document.location.href = "${root}/member?act=join";
-}	
-</script>
-<title>HappyHouse</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dfebd97b0ebbc269f439edcad3f447ac"></script>
+<head>
+	<title>HappyHouse</title>
+	<meta charset="utf-8">
+	<!-- header호출 -->
+	<jsp:include page="../common/header.jsp" />
+	<!-- js호출 -->
+	<script type="text/javascript" src ="../js/login.js"></script>
 </head>
 <body>
-
+<!-- nav 호출 -->
+<jsp:include page="../common/nav.jsp" />
 <div class="container" align="center">
 	<div class="col-lg-6" align="center">
 		<form id="loginform" method="post" action="">
@@ -64,3 +41,5 @@ function moveJoin() {
 		</form>
 	</div>
 </div>
+</body>
+</html>

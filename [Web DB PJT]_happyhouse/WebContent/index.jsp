@@ -11,11 +11,11 @@
 <title>HappyHouse</title>
 <meta charset="utf-8">
 <!-- header호출 -->
-<%@include file ="./common/header.jsp" %>
+<jsp:include page="common/header.jsp" />
 <!-- js호출 -->
-<script type="text/javascript" src ="./js/index.js"></script>
+<script type="text/javascript" src ="js/index.js"></script>
 <!-- css호출 -->
-<link rel="stylesheet" href="./css/index.css" type="text/css">
+<link rel="stylesheet" href="css/index.css" type="text/css">
 
 </head>
 <body>
@@ -30,8 +30,6 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
-				<!-- 				<li class="nav-item"><a class="nav-link" href="./dealDetailDatas.jsp">검색</a></li> -->
-				<!-- 				<li class="nav-item"><a class="nav-link" href="./dealDetailDatas.jsp">상세보기</a></li> -->
 			</ul>
 		</div>
 		<div class="collapse navbar-collapse justify-content-end"
@@ -191,7 +189,7 @@
 	<br />
 
 	<!-- footer호출 -->
-<%@include file ="./common/footer.jsp" %>
+<jsp:include page="common/footer.jsp" />
 </body>
 
 </html>

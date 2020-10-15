@@ -7,44 +7,15 @@
 <head>
 <title>HappyHouse-회원가입</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#registerBtn").click(function() {
 
-			if ($("#username").val() == "") {
-				alert("이름 입력!!!");
-				return;
-			} else if ($("#userid").val() == "") {
-				alert("아이디 입력!!!");
-				return;
-			} else if ($("#userpwd").val() == "") {
-				alert("비밀번호 입력!!!");
-				return;
-			} else if ($("#userpwd").val() != $("#pwdcheck").val()) {
-				alert("비밀번호 확인!!!");
-				return;
-			} else {
-				$("#memberform").attr("action", "${root}/member").submit();
-			}
-		});
-
-		$('#zipcode').focusin(function() {
-			$('#zipModal').modal();
-		});
-	});
-</script>
+<!-- header호출 -->
+<jsp:include page="../common/header.jsp" />
+<!-- js호출 -->
+<script type="text/javascript" src ="../js/join.js"></script>
 </head>
 <body>
-
+<!-- nav 호출 -->
+<jsp:include page="../common/nav.jsp" />
 	<div class="container" align="center">
 		<h2>회원가입</h2>
 		<div class="col-lg-6" align="center">
@@ -80,29 +51,12 @@
 						</select>
 					</div>
 				</div>
-				<!-- 			<div class="form-group" align="left"> -->
-				<!-- 				<label for="tel">전화번호</label> -->
-				<!-- 				<div id="tel" class="custom-control-inline"> -->
-				<!-- 				<select class="form-control" id="tel1" name="tel1"> -->
-				<!-- 					<option value="010">010</option> -->
-				<!-- 					<option value="02">02</option> -->
-				<!-- 					<option value="031">031</option> -->
-				<!-- 					<option value="032">032</option> -->
-				<!-- 					<option value="041">041</option> -->
-				<!-- 					<option value="051">051</option> -->
-				<!-- 					<option value="061">061</option> -->
-				<!-- 				</select> _ -->
-				<!-- 				<input type="text" class="form-control" id="tel2" name="tel2" placeholder=""> _ -->
-				<!-- 				<input type="text" class="form-control" id="tel3" name="tel3" placeholder=""> -->
-				<!-- 				</div> -->
-				<!-- 			</div> -->
 				<div class="form-group" align="left">
 					<label for="">주소</label><br>
 					<div id="addressdiv" class="custom-control-inline">
 						<input type="text" class="form-control" id="zipcode"
 							name="zipcode" placeholder="우편번호" size="7" maxlength="5"
 							readonly="readonly">
-						<!--<button type="button" class="btn btn-primary" onclick="javascript:">우편번호</button>-->
 					</div>
 					<input type="text" class="form-control" id="address" name="address"
 						placeholder=""> <input type="text" class="form-control"
@@ -154,6 +108,7 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- footer호출 -->
+<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

@@ -6,14 +6,6 @@ function memberDetail() {
 }
 
 
-
-
-
-
-
-
-
-
 /*카카오 맵 script */
 
 $(function() {
