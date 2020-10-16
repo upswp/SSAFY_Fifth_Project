@@ -1,6 +1,6 @@
 package com.ssafy.happyhouse.model;
 
-public class HosipitalDto {
+public class HospitalDto {
 
 	private String date;
 	private String sido;
@@ -10,11 +10,11 @@ public class HosipitalDto {
 	private String type;
 	private String tel;
 	
-	public HosipitalDto() {
+	public HospitalDto() {
 		
 	}
 
-	public HosipitalDto(String date, String sido, String gugun, String name, String address, String type, String tel) {
+	public HospitalDto(String date, String sido, String gugun, String name, String address, String type, String tel) {
 		super();
 		this.date = date;
 		this.sido = sido;
@@ -41,11 +41,11 @@ public class HosipitalDto {
 		this.sido = sido;
 	}
 
-	public String getgugun() {
+	public String getGugun() {
 		return gugun;
 	}
 
-	public void setgugun(String gugun) {
+	public void setGugun(String gugun) {
 		this.gugun = gugun;
 	}
 
@@ -83,8 +83,10 @@ public class HosipitalDto {
 
 	@Override
 	public String toString() {
-		return "HosipitalDto [date=" + date + ", sido=" + sido + ", gugun=" + gugun + ", name=" + name + ", address="
+		return "HospitalDto [date=" + date + ", sido=" + sido + ", gugun=" + gugun + ", name=" + name + ", address="
 				+ address + ", type=" + type + ", tel=" + tel + "]";
 	}
+
+
 	
 }

@@ -57,7 +57,6 @@ public class ClinicController extends HttpServlet {
 					arr.add(obj);
 					path = "/clinics.jsp";
 
-					System.out.println(arr.toJSONString());
 					request.setAttribute("clinicJson", arr.toJSONString());
 				}
 				
