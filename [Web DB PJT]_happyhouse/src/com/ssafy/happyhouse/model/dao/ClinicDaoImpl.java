@@ -34,8 +34,6 @@ public class ClinicDaoImpl implements ClinicDao{
 					+ " from guguncode g join clinic c "
 					+ " on g.gugun_name = c.gugun "
 					+ " where substr(g.gugun_code, 1, 5) = ? ");
-
-			System.out.println(sql);
 			
 			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, gugun);
@@ -44,7 +42,6 @@ public class ClinicDaoImpl implements ClinicDao{
 				ClinicDto dto = new ClinicDto();
 				dto.setDate(rs.getString("date"));
 				dto.setExtract(rs.getString("extract"));
-				System.out.println("aaaaa");
 				dto.setSido(rs.getString("sido"));
 				dto.setGugun(rs.getString("gugun"));
 				dto.setName(rs.getString("name"));

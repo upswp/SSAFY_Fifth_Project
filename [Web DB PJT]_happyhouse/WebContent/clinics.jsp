@@ -12,7 +12,11 @@
 	<!-- header호출 -->
 	<jsp:include page="./common/header.jsp" />
 	<!-- js호출 -->
+<<<<<<< HEAD
 	<script type="text/javascript" src ="./js/join.js"></script>
+=======
+
+>>>>>>> refs/remotes/origin/main
 </head>
 <body>
 <!-- nav 호출 -->
