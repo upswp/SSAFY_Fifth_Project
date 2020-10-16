@@ -97,7 +97,7 @@
 
 	<!-- select 검색 시작 -->
 	<div class="div-select">
-		<form id="dong-form" action="/happyhouse/map" method="post">
+		<form id="dong-form" action="${root}/map" method="post">
 			<input type="hidden" name='act' value='apt' /> <select
 				id="house-type" name="house-type" class="background-gray">
 				<option value="">선택</option>
