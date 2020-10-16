@@ -15,7 +15,10 @@ import org.json.simple.JSONObject;
 
 import com.ssafy.happyhouse.model.HouseInfoDto;
 import com.ssafy.happyhouse.model.SidoGugunCodeDto;
+import com.ssafy.happyhouse.model.service.HouseMapService;
 import com.ssafy.happyhouse.model.service.HouseMapServiceImpl;
+import com.ssafy.model.GuestBookDto;
+import com.ssafy.util.PageNavigation;
 
 @WebServlet("/map")
 public class HouseMapController extends HttpServlet {
@@ -147,6 +150,29 @@ public class HouseMapController extends HttpServlet {
 			} 
 			request.getRequestDispatcher(path).forward(request, response);
 		}//dong
-	}//process
+		
+		
+		else if ("listArticle".equals(act)) {
 
+			String path = "/index.jsp";
+			int currentPage = Integer.parseInt(request.getParameter("pg")); // 보고자하는 page번호
+			String spp = request.getParameter("spp");
+			int sizePerPage = spp == null ? 10 : Integer.parseInt(spp);//sizePerPage
+			String key = request.getParameter("key");//"" 검색조건
+			String word = request.getParameter("word");//"" 검색어
+			try {
+				List<HouseInfoDto> list = HouseMapService.listArticle(currentPage, sizePerPage, key, word);
+				PageNavigation pageNavigation = HouseMapService.makePageNavigation(currentPage, sizePerPage, key, word);
+				request.setAttribute("articles", list);
+				request.setAttribute("navigation", pageNavigation);
+				path = "/guestbook/list.jsp";
+			} catch (Exception e) {
+				e.printStackTrace();
+				request.setAttribute("msg", "글목록을 얻어오는 중 문제가 발생했습니다.");
+				path = "/error/error.jsp";
+			}
+			request.getRequestDispatcher(path).forward(request, response);
+		
+		}
+	}//process
 }
