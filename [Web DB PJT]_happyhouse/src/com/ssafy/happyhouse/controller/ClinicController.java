@@ -31,12 +31,17 @@ public class ClinicController extends HttpServlet {
 	protected void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String act = request.getParameter("act");
-		String gugun = request.getParameter("gugun");
-		String path = "/index.jsp";									/////////////
-		if("showClinics".equals(act)) {									////////////			
+
+		if("showClinics".equals(act)) {							
+		
+			String gugun = request.getParameter("gugun");
+			List<ClinicDto> clinics = null;
+			String path = "/index.jsp";	
+			JSONArray arr = new JSONArray();
+			
 			try {
-				List<ClinicDto> clinics = ClinicServiceImpl.getClinicService().searchClinics(gugun);
-				JSONArray arr = new JSONArray();
+				clinics = ClinicServiceImpl.getClinicService().searchClinics(gugun);
+				
 				for(ClinicDto dto : clinics) {
 					JSONObject obj = new JSONObject();
 					obj.put("date", dto.getDate());
@@ -52,14 +57,15 @@ public class ClinicController extends HttpServlet {
 					arr.add(obj);
 					path = "/clinics.jsp";
 
-					request.setAttribute("aptJson", arr.toJSONString());
+					System.out.println(arr.toJSONString());
+					request.setAttribute("clinicJson", arr.toJSONString());
 				}
-				
-				request.getRequestDispatcher(path).forward(request, response);
 				
 			} catch (Exception e) {
 				System.out.println(e);
-			}	
+			}
+			
+			request.getRequestDispatcher(path).forward(request, response);
 		}
 		
 		
