@@ -51,7 +51,10 @@
 	<script>
 	$(function(){
 	
-		let datas = ${aptJson};
+		let datas = null;
+		<c:if test="${aptJson ne null}">
+			datas = ${aptJson};
+		</c:if>
 		let lati = 33.451475;
 		let longi = 126.570528;
 		if(datas != null){
@@ -80,7 +83,7 @@
 				+ "<td>"+item.code+"</td>"
 				+ "<td>"+item.lat+"</td>"
 				+ "<td>"+item.lng+"</td>"
-				+ "<td>		<form id = 'test' action='/happyhouse/deal' method='post' >"
+				+ "<td>		<form id = 'test' action='${root}/deal' method='post' >"
 				+ "<input type='hidden' name='act' value='deal-detail'/>"
 				+	"<input type='hidden' name='dong' value='" +item.dong+ "'/>"
 				+	"<input type='hidden' name='jibun' value='" +item.jibun+ "'/>"
@@ -227,7 +230,7 @@
 		
 		<!-- select 검색 시작 -->
 		<div class="div-select">
-			 <form id = "dong-form" action="/happyhouse/map" method="post">
+			 <form id = "dong-form" action="${root}/map" method="post">
 			 <input type="hidden" name='act' value='apt'/>
 			 	<select id="house-type" name="house-type" class="background-gray">
 		      <option value="">선택</option>
