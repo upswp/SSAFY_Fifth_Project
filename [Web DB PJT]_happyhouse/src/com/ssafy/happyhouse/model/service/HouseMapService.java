@@ -2,9 +2,9 @@ package com.ssafy.happyhouse.model.service;
 
 import java.util.List;
 
-import com.ssafy.happyhouse.controller.PageNavigation;
 import com.ssafy.happyhouse.model.HouseInfoDto;
 import com.ssafy.happyhouse.model.SidoGugunCodeDto;
+import com.ssafy.util.PageNavigation;
 
 public interface HouseMapService {
 	
@@ -35,14 +35,5 @@ public interface HouseMapService {
 	 * @throws Exception
 	 */
 	List<HouseInfoDto> getAptInDong(String dong) throws Exception;
-	
-	
-	static List<HouseInfoDto> listArticle(int currentPage, int sizePerPage, String key, String word) {
-		return null;
-	}
-	static PageNavigation makePageNavigation(int currentPage, int sizePerPage, String key, String word) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }

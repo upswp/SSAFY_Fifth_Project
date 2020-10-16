@@ -38,4 +38,5 @@ public class HouseMapServiceImpl implements HouseMapService {
 		return HouseMapDaoImpl.getHouseMapDao().getAptInDong(dong);
 	}
 
+
 }

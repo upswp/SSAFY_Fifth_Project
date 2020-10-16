@@ -198,6 +198,7 @@ public class HouseMemberController extends HttpServlet {
 				}
 			} else {
 				request.setAttribute("msg", "아이디 또는 비밀번호 확인 후 로그인해 주세요.");
+				path = "/error/error.jsp";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

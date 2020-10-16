@@ -94,7 +94,7 @@
 </head>
 <body>
 	<!-- nav 호출 -->
-	<jsp:include page="./common/nav.jsp" />
+	<jsp:include page="./nav.jsp" />
 	
 	<!-- contents start -->
 	
