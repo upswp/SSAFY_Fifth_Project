@@ -253,8 +253,13 @@
 		<!-- select 검색 끝 -->
 	
 		<br/>
+	
+		<br/>
 		<div id="map" style="width:80%; height:500px; margin:0 auto;"></div>
 		<br/>
 		<div id="data-show"></div>
+		
+		${gugun}
+
 	</body>
 </html>
