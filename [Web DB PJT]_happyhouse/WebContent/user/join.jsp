@@ -5,18 +5,53 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>HappyHouse-회원가입</title>
-<meta charset="utf-8">
+	<title>HappyHouse-회원가입</title>
+	<meta charset="utf-8">
+	
+	<!-- header호출 -->
+	<jsp:include page="../common/header.jsp" />
+	<!-- js호출 -->
+	<script type="text/javascript" src ="../js/join.js"></script>
+	<!-- css호출 -->
+	<link rel="stylesheet" href="../css/login.css" type="text/css">
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#registerBtn").click(function() {
 
-<!-- header호출 -->
-<jsp:include page="../common/header.jsp" />
-<!-- js호출 -->
-<script type="text/javascript" src ="../js/join.js"></script>
+			if ($("#username").val() == "") {
+				alert("이름 입력!!!");
+				return;
+			} else if ($("#userid").val() == "") {
+				alert("아이디 입력!!!");
+				return;
+			} else if ($("#userpwd").val() == "") {
+				alert("비밀번호 입력!!!");
+				return;
+			} else if ($("#userpwd").val() != $("#pwdcheck").val()) {
+				alert("비밀번호 확인!!!");
+				return;
+			} else {
+				$("#memberform").attr("action", "${root}/member").submit();
+			}
+		});
+
+		$('#zipcode').focusin(function() {
+			$('#zipModal').modal();
+		});
+	});
+	</script>
+	
+	
 </head>
 <body>
 <!-- nav 호출 -->
 <jsp:include page="../common/nav.jsp" />
 	<div class="container" align="center">
+		<div id="inner-head">
+		<br>
+		<img src="../img/logo.png">
+		</div>
 		<h2>회원가입</h2>
 		<div class="col-lg-6" align="center">
 			<form id="memberform" method="post" action="">
@@ -108,7 +143,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- footer호출 -->
+	<div class="inner-foot">
+		<p class="tag">HappyHouse in SSAFY</p>
+	</div>
 <jsp:include page="../common/footer.jsp" />
 </body>
 </html>

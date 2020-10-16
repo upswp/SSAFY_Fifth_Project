@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="root" value="${pageContext.request.contextPath}"/>
-<c:if test="${cookie.ssafy_id.value ne null}">
+	<c:set var="root" value="${pageContext.request.contextPath}"/>
+	<c:if test="${cookie.ssafy_id.value ne null}">
 	<c:set var="saveid" value="${cookie.ssafy_id.value}"/>
 	<c:set var="idck" value=" checked=\"checked\""/>
 </c:if>
@@ -12,12 +12,19 @@
 	<!-- header호출 -->
 	<jsp:include page="../common/header.jsp" />
 	<!-- js호출 -->
-	<script type="text/javascript" src ="../js/login.js"></script>
+<!-- 	<script type="text/javascript" src ="../js/login.js"></script> -->
+	<!-- css호출 -->
+	<link rel="stylesheet" href="../css/login.css" type="text/css">
+	
 </head>
 <body>
 <!-- nav 호출 -->
 <jsp:include page="../common/nav.jsp" />
 <div class="container" align="center">
+	<div class="inner-head">
+	<br>
+		<img src="../img/logo.png">
+	</div>
 	<div class="col-lg-6" align="center">
 		<form id="loginform" method="post" action="">
 		<input type="hidden" name="act" id="act" value="login">
@@ -40,6 +47,30 @@
 			</div>
 		</form>
 	</div>
+	<div class="inner-foot">
+		<p class="tag">HappyHouse in SSAFY</p>
+	</div>
 </div>
+
+<script type="text/javascript">
+
+function login() {
+	if(document.getElementById("userid").value == "") {
+		alert("아이디 입력하십시오.");
+		return;
+	} else if(document.getElementById("userpwd").value == "") {
+		alert("비밀번호 입력하십시오.");
+		return;
+	} else {
+		document.getElementById("loginform").action = "${root}/member?act=login";
+		document.getElementById("loginform").submit();
+	}
+}
+	  
+function moveJoin() {
+	document.location.href = "${root}/member?act=join";
+}
+
+</script>
 </body>
 </html>
