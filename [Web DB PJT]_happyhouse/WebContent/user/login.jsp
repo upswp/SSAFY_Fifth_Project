@@ -12,7 +12,7 @@
 	<!-- header호출 -->
 	<jsp:include page="../common/header.jsp" />
 	<!-- js호출 -->
-<!-- 	<script type="text/javascript" src ="../js/login.js"></script> -->
+<script type="text/javascript" src ="../js/login.js"></script>
 	<!-- css호출 -->
 	<link rel="stylesheet" href="../css/login.css" type="text/css">
 	
@@ -52,25 +52,6 @@
 	</div>
 </div>
 
-<script type="text/javascript">
 
-function login() {
-	if(document.getElementById("userid").value == "") {
-		alert("아이디 입력하십시오.");
-		return;
-	} else if(document.getElementById("userpwd").value == "") {
-		alert("비밀번호 입력하십시오.");
-		return;
-	} else {
-		document.getElementById("loginform").action = "${root}/member?act=login";
-		document.getElementById("loginform").submit();
-	}
-}
-	  
-function moveJoin() {
-	document.location.href = "${root}/member?act=join";
-}
-
-</script>
 </body>
 </html>

@@ -17,16 +17,6 @@
 <!-- css호출 -->
 <link rel="stylesheet" href="css/index.css" type="text/css">
 
-<script type="text/javascript">
-
-function logout() {
-	document.location.href = "${root}/member?act=logout";
-}
-function memberDetail() {
-	document.location.href = "${root}/member?act=memberDetail";
-}
-</script>
-
 </head>
 <body>
 
