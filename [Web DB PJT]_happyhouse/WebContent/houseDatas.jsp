@@ -58,11 +58,11 @@
 <script type="text/javascript">
 
 function hosipital(){
-	document.location.href = "../clinic?act=showHospitals&&gugun=${gugun}";
+	document.location.href = "../hosipital?act=showHospitals&&gugun=${gugun}";
 }
 
 function clinic(){
-	document.location.href = "../hosipital?act=showClinics&&gugun=${gugun}";
+	document.location.href = "../clinic?act=showClinics&&gugun=${gugun}";
 }
 
 
