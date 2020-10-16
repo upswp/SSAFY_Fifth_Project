@@ -2,10 +2,13 @@ package com.ssafy.happyhouse.model;
 
 public class ClinicDto {
 
-	private String city;
+	private String date;
+	private String extract;
+	private String sido;
 	private String gugun;
-	private String hospitalName;
-	private String weekDayOp;
+	private String name;
+	private String address;
+	private String weekOp;
 	private String satOp;
 	private String sunOp;
 	private String tel;
@@ -14,24 +17,43 @@ public class ClinicDto {
 
 	}
 
-	public ClinicDto(String city, String gugun, String hospitalName, String weekDayOp, String satOp, String sunOp,
-			String tel) {
+	public ClinicDto(String date, String extract, String sido, String gugun, String name, String address, String weekOp,
+			String satOp, String sunOp, String tel) {
 
-		this.city = city;
+		this.date = date;
+		this.extract = extract;
+		this.sido = sido;
 		this.gugun = gugun;
-		this.hospitalName = hospitalName;
-		this.weekDayOp = weekDayOp;
+		this.name = name;
+		this.address = address;
+		this.weekOp = weekOp;
 		this.satOp = satOp;
 		this.sunOp = sunOp;
 		this.tel = tel;
 	}
 
-	public String getCity() {
-		return city;
+	public String getDate() {
+		return date;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getExtract() {
+		return extract;
+	}
+
+	public void setExtract(String extract) {
+		this.extract = extract;
+	}
+
+	public String getSido() {
+		return sido;
+	}
+
+	public void setSido(String sido) {
+		this.sido = sido;
 	}
 
 	public String getGugun() {
@@ -42,20 +64,28 @@ public class ClinicDto {
 		this.gugun = gugun;
 	}
 
-	public String getHospitalName() {
-		return hospitalName;
+	public String getName() {
+		return name;
 	}
 
-	public void setHospitalName(String hospitalName) {
-		this.hospitalName = hospitalName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getWeekDayOp() {
-		return weekDayOp;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setWeekDayOp(String weekDayOp) {
-		this.weekDayOp = weekDayOp;
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getWeekOp() {
+		return weekOp;
+	}
+
+	public void setWeekOp(String weekOp) {
+		this.weekOp = weekOp;
 	}
 
 	public String getSatOp() {
@@ -84,9 +114,11 @@ public class ClinicDto {
 
 	@Override
 	public String toString() {
-		return "ClinicDto [city=" + city + ", gugun=" + gugun + ", hospitalName=" + hospitalName + ", weekDayOp="
-				+ weekDayOp + ", satOp=" + satOp + ", sunOp=" + sunOp + ", tel=" + tel + "]";
+		return "ClinicDto [date=" + date + ", extract=" + extract + ", sido=" + sido + ", gugun=" + gugun + ", name="
+				+ name + ", address=" + address + ", weekOp=" + weekOp + ", satOp=" + satOp + ", sunOp=" + sunOp
+				+ ", tel=" + tel + "]";
 	}
+
 	
 	
 	
