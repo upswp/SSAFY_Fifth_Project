@@ -114,10 +114,13 @@ public class HouseMapController extends HttpServlet {
 		else if("apt".equals(act)) {
 			String path = "/index.jsp";
 			String dong = request.getParameter("dong");
+			String gugun = request.getParameter("gugun");
+
 			List<HouseInfoDto> list = null;
 			JSONArray arr = new JSONArray();
 			try {
 				list = HouseMapServiceImpl.getHouseMapService().getAptInDong(dong);
+
 				for(HouseInfoDto dto : list) {
 					JSONObject obj = new JSONObject();
 					obj.put("no", dto.getNo());
@@ -129,8 +132,12 @@ public class HouseMapController extends HttpServlet {
 					obj.put("lng", dto.getLng());
 					arr.add(obj);
 					path = "/houseDatas.jsp";
+
 					request.setAttribute("aptJson", arr.toJSONString());
 				}
+				
+				request.setAttribute("gugun", gugun);
+				
 			} catch (Exception e) {
 				arr = new JSONArray();
 				JSONObject obj = new JSONObject();
