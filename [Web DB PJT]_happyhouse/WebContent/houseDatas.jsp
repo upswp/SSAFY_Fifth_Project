@@ -50,15 +50,15 @@
 		<br/>
 		<div id="map" style="width:80%; height:500px; margin:0 auto;"></div>
 		<br/>
-		<button type="button" class="btn btn-primary" onclick="javascript:hosipital();">주변 안심병원</button>
+		<button type="button" class="btn btn-primary" onclick="javascript:hospital();">주변 안심병원</button>
 		<button type="button" class="btn btn-primary" onclick="javascript:clinic();">주변 선별진료소</button>
 		<br/>
 		<div id="data-show"></div>
 
 <script type="text/javascript">
 
-function hosipital(){
-	document.location.href = "./hosipital?act=showHospitals&&gugun=${gugun}";
+function hospital(){
+	document.location.href = "./hospital?act=showHospitals&&gugun=${gugun}";
 }
 
 function clinic(){

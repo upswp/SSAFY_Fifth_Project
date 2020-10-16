@@ -30,29 +30,26 @@
 			var geocoder = new kakao.maps.services.Geocoder();
 			
 			// 주소로 좌표를 검색합니다
-			let clinics = null;
-			<c:if test="${clinicJson ne null}">
-				clinics = ${clinicJson};
+			let hospitals = null;
+			<c:if test="${hospitalJson ne null}">
+				hospitals = ${hospitalJson};
 			</c:if>
 		
-			if(clinics != null){
+			if(hospitals != null){
 				
 				let listDatas = "<table class=\"table mt-2\">";
-		        listDatas += "<tr><th>기준날짜</th><th>검체 채취</th><th>시도</th><th>구군</th><th>이름</th>"
-		        +"<th>주소</th><th>주중</th><th>토요일</th><th>일요일</th><th>번호</th></tr>"
+		        listDatas += "<tr><th>기준날짜</th><th>시도</th><th>구군</th><th>이름</th>"
+		        +"<th>주소</th><th>타입</th><th>번호</th></tr>"
 				
-				$.each(clinics, function(index, item) {
+				$.each(hospitals, function(index, item) {
 					
 			      let listData = "<tr>" 
 						+ "<td>"+item.date+"</td>"
-						+ "<td>"+item.extract+"</td>"
 						+ "<td>"+item.sido+"</td>"
 						+ "<td>"+item.gugun+"</td>"
 						+ "<td>"+item.name+"</td>"
 						+ "<td>"+item.address+"</td>"
-						+ "<td>"+item.weekOp+"</td>"
-						+ "<td>"+item.satOp+"</td>"
-						+ "<td>"+item.sunOp+"</td>"
+						+ "<td>"+item.type+"</td>"
 						+ "<td>"+item.tel+"</td>"
 		        + "</tr>";
 		    		listDatas += listData;

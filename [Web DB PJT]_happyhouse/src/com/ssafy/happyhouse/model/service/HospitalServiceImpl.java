@@ -3,6 +3,7 @@ package com.ssafy.happyhouse.model.service;
 import java.util.List;
 
 import com.ssafy.happyhouse.model.HospitalDto;
+import com.ssafy.happyhouse.model.dao.HospitalDaoImpl;
 
 public class HospitalServiceImpl implements HospitalService {
 
@@ -22,7 +23,7 @@ public class HospitalServiceImpl implements HospitalService {
 	@Override
 	public List<HospitalDto> searchHospitals(String gugun) throws Exception {
 
-		return HospitalServiceImpl.getHospitalService().searchHospitals(gugun);
+		return HospitalDaoImpl.getHospitalDao().searchHospitals(gugun);
 	}
 	
 }

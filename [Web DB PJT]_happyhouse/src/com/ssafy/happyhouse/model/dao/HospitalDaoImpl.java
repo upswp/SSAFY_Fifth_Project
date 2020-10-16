@@ -16,7 +16,7 @@ public class HospitalDaoImpl implements HospitalDao {
 	private HospitalDaoImpl() {
 		
 	}
-	public HospitalDao getHospitalDao() {
+	public static HospitalDao getHospitalDao() {
 		return hospitalDao;
 	}
 	
