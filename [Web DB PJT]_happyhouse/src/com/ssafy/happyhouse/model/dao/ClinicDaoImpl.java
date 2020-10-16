@@ -30,9 +30,9 @@ public class ClinicDaoImpl implements ClinicDao{
 		try {
 			conn = DBUtil.getConnection();
 			StringBuilder sql = new StringBuilder();
-			sql.append("SELECT * "
-					+ " from guguncode g join hospital h "
-					+ " on g.gugun_name = h.gugun "
+			sql.append("SELECT c.date, c.extract, c.sido, c.gugun, c.name, c.address, c.weekOp, c.satOp, c.sunOp, c.tel "
+					+ " from guguncode g join clinic c "
+					+ " on g.gugun_name = c.gugun "
 					+ " where substr(g.gugun_code, 1, 5) = ? ");
 
 			System.out.println(sql);
