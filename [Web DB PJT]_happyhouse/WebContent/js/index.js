@@ -1,8 +1,8 @@
 function logout() {
-	document.location.href = "${root}/member?act=logout";
+	document.location.href = "./member?act=logout";
 }
 function memberDetail() {
-	document.location.href = "${root}/member?act=memberDetail";
+	document.location.href = "./member?act=memberDetail";
 }
 
 
@@ -70,7 +70,7 @@ $(function() {
 /*시군구 읍면동 얻어오기 시작 */
 	$(document).ready(
 			function() {
-				$.get("${pageContext.request.contextPath}/map", {
+				$.get("./map", {
 					act : "sido"
 				}, function(data, status) {
 					$.each(data, function(index, vo) {
@@ -85,7 +85,7 @@ $(function() {
 			function() {
 				$("#sido").change(
 						function() {
-							$.get("${pageContext.request.contextPath}/map", {
+							$.get("./map", {
 								act : "gugun",
 								sido : $("#sido").val()
 							}, function(data, status) {
@@ -103,7 +103,7 @@ $(function() {
 						});//change
 				$("#gugun").change(
 						function() {
-							$.get("${pageContext.request.contextPath}/map", {
+							$.get("./map", {
 								act : "dong",
 								gugun : $("#gugun").val()
 							}, function(data, status) {
