@@ -51,7 +51,10 @@
 	<script>
 	$(function(){
 	
-		let datas = ${dealDetailJson};
+		let datas = null;
+		<c:if test="${dealDetailJson ne null}">
+			datas = ${dealDetailJson};
+		</c:if>
 		let lati = 33.451475;
 		let longi = 126.570528;
 		if(datas != null){		
